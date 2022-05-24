@@ -1,13 +1,26 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My app</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://cdn.theflyingrat.com">
+    <meta name="title" content="{{data['title']}}">
+    <meta name="description" content="{{data['desc']}}">
+    <meta name="keywords" content="{{data['keywords']}}">
+    <link rel="icon" type="image/png" href="{{data['favicon']}}">
+    {% for i in data["preload"] %}
+        <link rel="preload" as="{{i[1]}}" href="{{i[0]}}">
+    {% endfor %}
+    <title>{{data["title"]}}</title>
+    {% for i in data["styles"] %}
+        <link rel="stylesheet" href="{{i}}">
+    {% endfor %}
+    {% for i in data["scripts"] %}
+        <script src="{{i}}" defer></script>
+    {% endfor %}
 </head>
 <body>
-  <h1>{{ name }}</h1>
+    <h1>{{data["heading"]}}</h1>
+    <p>{{data["content"]}}</p>
 </body>
 </html>
