@@ -8,10 +8,6 @@
   <title>My app</title>
 </head>
 <body>
-  <ul>
-    {% for product in products %}
-      <li>{{ product['name'] }}: {{ product['amount'] }} in stock (${{ product['price'] }}/unit)</li>
-    {% endfor %}
-  </ul>
+  <h1>{{ name }}</h1>
 </body>
 </html>
